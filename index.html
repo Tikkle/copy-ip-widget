@@ -2,81 +2,36 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Click to Copy IP</title>
+  <title>Manual Copy Box - Silkscreen Font</title>
+  <link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet">
   <style>
     body {
-      background: transparent;
-      margin: 0;
-      padding: 0;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100%;
-      font-family: 'Arial', sans-serif;
+      height: 100vh;
+      background-color: #121212;
     }
 
     .copy-box {
       padding: 12px 24px;
-      background-color: #2a2a40;
-      color: #fff;
-      font-size: 18px;
-      border-radius: 10px;
-      cursor: pointer;
-      user-select: none;
-      border: 2px solid #555;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.4);
-      position: relative;
-      transition: all 0.3s ease;
-    }
-
-    .copy-box.copied {
-      background-color: #4caf50;
-      color: #fff;
-      transform: scale(1.05);
-    }
-
-    .copy-box::after {
-      content: "Copied!";
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%) scale(0.8);
-      opacity: 0;
-      transition: opacity 0.3s, transform 0.3s;
-      pointer-events: none;
-    }
-
-    .copy-box.copied::after {
-      opacity: 1;
-      transform: translate(-50%, -50%) scale(1);
-    }
-
-    .copy-box span {
-      transition: opacity 0.2s;
-    }
-
-    .copy-box.copied span {
-      opacity: 0;
+      background-color: #1e1e2f;
+      color: #ffffff;
+      font-family: 'Silkscreen', monospace;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: text;
+      user-select: text;
+      border: 2px solid #444;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     }
   </style>
 </head>
 <body>
 
-<div class="copy-box" onclick="copyToClipboard(this)">
-  <span>play.thecurfewmc.net</span>
+<div class="copy-box">
+  PLAY.THECURFEWMC.NET
 </div>
-
-<script>
-  function copyToClipboard(el) {
-    const text = "play.thecurfewmc.net";
-    navigator.clipboard.writeText(text).then(() => {
-      el.classList.add("copied");
-      setTimeout(() => {
-        el.classList.remove("copied");
-      }, 1800);
-    });
-  }
-</script>
 
 </body>
 </html>
